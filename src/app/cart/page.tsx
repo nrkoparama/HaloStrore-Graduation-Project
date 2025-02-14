@@ -95,7 +95,7 @@ export default function Cart() {
   );
 
   return (
-    <section className="m-[48px] bg-[#F2F4F7] tracking-wide">
+    <section className="p-12 bg-[#F2F4F7] tracking-wide">
       {cart.length > 0 ? (
         <div>
           <p className="text-[28px] uppercase">Giỏ hàng</p>
@@ -213,9 +213,11 @@ export default function Cart() {
               </div>
 
               <div className="w-full border-b-[4px] border-[#000000]"></div>
-              <button className="w-full h-[40px] bg-[#034292] text-[#fff] rounded">
-                Thanh toán
-              </button>
+              <Link href="/checkout">
+                <button className="w-full h-[40px] bg-[#034292] text-[#fff] rounded">
+                  Thanh toán
+                </button>
+              </Link>
             </div>
           </div>
           <Link
@@ -236,9 +238,19 @@ export default function Cart() {
 
       {/* cart */}
 
-      <div className="mt-[60px]">
+      <div className="mt-12">
+        <p className="text-2xl font-medium">Sản phẩm vừa xem</p>
+        <div className="mt-[18px] flex flex-wrap justify-between">
+          {data.map((product: any, index: any) => (
+            <Link key={index} href="#" className="w-[16%]">
+              <NewProBox data={product} />
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="mt-12">
         <p className="text-2xl font-medium">Sản phẩm mới</p>
-        <div className="w-full mt-[18px] flex flex-wrap justify-between">
+        <div className="mt-[18px] flex flex-wrap justify-between">
           {data.map((product: any, index: any) => (
             <Link key={index} href="#" className="w-[16%]">
               <NewProBox data={product} />

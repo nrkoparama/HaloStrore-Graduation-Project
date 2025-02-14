@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
+import { Send } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#fff] tracking-wide py-10 px-6 md:px-12">
+    <footer className="tracking-wide py-10 px-6 md:px-12">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-        {/* About HALO */}
+        
         <div className="space-y-4 md:col-span-2">
           <h2 className="text-lg font-semibold">Về HALO</h2>
           <p className="text-sm text-gray-600">
@@ -18,7 +19,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Address */}
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Địa chỉ</h2>
           <p className="text-sm font-semibold">Tp Hồ Chí Minh:</p>
@@ -33,7 +33,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Customer Support */}
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Hỗ trợ khách hàng</h2>
           <ul className="text-sm text-gray-600 space-y-2">
@@ -60,7 +59,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Terms & Conditions */}
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Điều khoản & điều kiện</h2>
           <ul className="text-sm text-gray-600 space-y-2">
@@ -83,36 +81,54 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Subscription & Social Media */}
       <div className="container mx-auto mt-4">
         <h2 className="text-lg font-semibold">Đăng ký nhận tin</h2>
-        <form className="mt-4 flex items-center space-x-2">
+        <form className="relative w-[320px] bg-[#fff] mt-4 flex items-center border rounded">
           <input
             type="email"
             placeholder="Nhập email của bạn"
-            className="w-64 px-4 py-2 border rounded focus:outline-none"
+            className="w-[280px] px-4 py-2 focus:outline-none"
           />
-          <button className="bg-blue-600 text-white px-4 py-2 rounded">
-            Đăng ký
+          <button className="absolute top-[8px] right-[12px] text-gray-600">
+            <Send />
           </button>
         </form>
         <h2 className="text-lg font-semibold mt-6">Theo dõi HALO</h2>
         <div className="flex space-x-4 mt-4">
-          <Link href="https://www.facebook.com" target="_blank" title="Facebook">
+          <Link
+            href="https://www.facebook.com"
+            target="_blank"
+            title="Facebook"
+          >
             <img
               src="/images/facebook-icon.png"
               alt="Facebook"
               className="w-8 h-8"
             />
           </Link>
-          <img
-            src="/images/instagram-icon.png"
-            alt="Instagram"
-            className="w-8 h-8"
-          />
-          <img src="/images/tiktok-icon.png" alt="TikTok" className="w-8 h-8" />
+
+          <Link
+            href="https://www.instagram.com/"
+            target="_blank"
+            title="Instagram"
+          >
+            <img
+              src="/images/instagram-icon.png"
+              alt="Instagram"
+              className="w-8 h-8"
+            />
+          </Link>
+
+          <Link href="https://www.tiktok.com/" target="_blank" title="TikTok">
+            <img
+              src="/images/tiktok-icon.png"
+              alt="TikTok"
+              className="w-8 h-8"
+            />
+          </Link>
         </div>
       </div>
+
       <p className="text-center mt-4">
         &copy;2025{" "}
         <Link href="/" className="hover:text-[#034292]" title="Trang chủ">
